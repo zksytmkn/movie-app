@@ -1,4 +1,5 @@
 import { Banner } from "../components/banner";
+import { Nav } from "../components/nav";
 import { Row } from "../components/row";
 import { fetchMovies } from "@/actions/movie";
 
@@ -7,6 +8,7 @@ export default async function Home() {
 
   return (
     <>
+      <Nav />
       {/* @ts-expect-error Server Component */}
       <Banner />
       <Row title="Only on Netflix" movies={data.NetflixOriginal.results} isLargeRow />

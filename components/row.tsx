@@ -18,7 +18,7 @@ export const Row = ({ title, movies, isLargeRow }: Props) => {
 
   return (
     <div className="ml-5">
-      <h2>{title}</h2>
+      <h2 className="text-xl font-bold">{title}</h2>
       <div className="flex overflow-y-hidden overflow-x-scroll p-5">
         {movies.map((movie, i) => (
           <img

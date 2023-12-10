@@ -13,7 +13,7 @@ export const Banner = async () => {
 
   return (
     <header
-      className="text-white object-cover h-[460px] bg-cover bg-center"
+      className="text-white object-cover h-[460px] bg-cover bg-center mb-10"
       style={{
         backgroundImage: `url(${base_url}${banner?.backdrop_path})`,
       }}
