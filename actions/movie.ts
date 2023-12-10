@@ -9,18 +9,19 @@ const instance = axios.create({
 export const fetchMovies = async () => {
   const { data: NetflixOriginal } = await instance.get(`/discover/tv?api_key=${process.env.API_KEY}&with_networks=213`);
   const { data: Top } = await instance.get(`/discover/tv?api_key=${process.env.API_KEY}&languager=en-us`);
-  const { data: Action } = await instance.get(`/discover/tv?api_key=${process.env.API_KEY}&with_genres=28`);
   const { data: Comedy } = await instance.get(`/discover/tv?api_key=${process.env.API_KEY}&with_genres=35`);
-  const { data: Horror } = await instance.get(`/discover/tv?api_key=${process.env.API_KEY}&with_genres=27`);
   const { data: Romantic } = await instance.get(`/discover/tv?api_key=${process.env.API_KEY}&with_genres=10749`);
   const { data: Documentary } = await instance.get(`/discover/tv?api_key=${process.env.API_KEY}&with_genres=99`);
   return {
     NetflixOriginal,
     Top,
-    Action,
     Comedy,
-    Horror,
     Romantic,
     Documentary,
   };
+};
+
+export const fetchBanner = async () => {
+  const { data } = await instance.get(`/discover/tv?api_key=${process.env.API_KEY}&with_networks=213`);
+  return data.results[Math.floor(Math.random() * data.results.length - 1)];
 };
