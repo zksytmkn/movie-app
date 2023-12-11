@@ -9,7 +9,6 @@ export default async function Home() {
   return (
     <>
       <Nav />
-      {/* @ts-expect-error Server Component */}
       <Banner />
       <Row title="Only on Netflix" movies={data.NetflixOriginal.results} isLargeRow />
       <Row title="Global Top 20" movies={data.Top.results} />
