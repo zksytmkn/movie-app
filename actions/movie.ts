@@ -25,3 +25,8 @@ export const fetchBanner = async () => {
   const { data } = await instance.get(`/discover/tv?api_key=${process.env.API_KEY}&with_networks=213`);
   return data.results[Math.floor(Math.random() * data.results.length - 1)];
 };
+
+export const fetchTrailer = async (id: string) => {
+  const { data } = await instance.get(`/tv/${id}/videos?api_key=${process.env.API_KEY}`);
+  return data.results[0]?.key;
+};

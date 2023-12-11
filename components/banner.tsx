@@ -28,7 +28,7 @@ export const Banner = async () => {
             My List
           </Button>
         </div>
-        <h1 className="mt-4 max-w-sm font-bold">{truncate(banner?.overview, 160)}</h1>
+        <h1 className="mt-4 max-w-xs font-bold">{truncate(banner?.overview, 160)}</h1>
       </div>
     </header>
   );
